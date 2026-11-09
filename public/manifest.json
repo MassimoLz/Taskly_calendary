@@ -1,0 +1,16 @@
+{
+  "name": "Taskly",
+  "short_name": "Taskly",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eef1f5",
+  "theme_color": "#0e7c66",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

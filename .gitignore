@@ -1,0 +1,21 @@
+# Ambiente e credenziali
+.env
+.env.*
+!.env.example
+
+# Dipendenze
+node_modules/
+
+# Build ed eseguibili
+calendario-bin
+avvia-calendario.sh
+
+# Log
+*.log
+npm-debug.log*
+
+# Sistema operativo ed editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

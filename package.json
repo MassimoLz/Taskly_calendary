@@ -1,0 +1,23 @@
+{
+  "name": "calendario",
+  "version": "1.1.0",
+  "private": true,
+  "main": "server.js",
+  "bin": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "npx --yes @yao-pkg/pkg . --targets node20-linux-x64 --output calendario-bin"
+  },
+  "pkg": {
+    "assets": ["public/**/*"]
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "imapflow": "^1.0.0",
+    "mailparser": "^3.6.0",
+    "mysql2": "^3.9.0",
+    "nodemailer": "^6.9.0",
+    "pdf-parse": "1.1.1"
+  }
+}
