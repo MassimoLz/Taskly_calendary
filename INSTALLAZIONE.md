@@ -168,60 +168,7 @@ Apri il browser su: **http://localhost:3000**
 
 ---
 
-## 7. Avvio automatico all'accensione (Opzionale)
 
-### Linux (tramite systemd)
-Crea il file di servizio:
-```bash
-sudo nano /etc/systemd/system/taskly.service
-```
-Contenuto:
-```ini
-[Unit]
-Description=Taskly Calendar Server
-After=network.target mariadb.service
-
-[Service]
-User=TUO_UTENTE
-WorkingDirectory=/home/TUO_UTENTE/Taskly
-ExecStart=/usr/bin/node server.js
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-```
-Attiva il servizio:
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable --now taskly
-journalctl -u taskly -f
-```
-
-### Windows (tramite PM2 o file batch)
-**Opzione consigliata con PM2 (gestore di processi Node):**
-```powershell
-npm install -g pm2
-pm2 start server.js --name "taskly"
-pm2 save
-```
-Per avviare PM2 automaticamente all'avvio di Windows puoi usare `pm2-windows-service`:
-```powershell
-npm install -g pm2-windows-service
-pm2-service-install
-```
-
-**Opzione semplice (script di avvio rapido):**
-Crea un file `avvia_taskly.bat` nella cartella del progetto:
-```bat
-@echo off
-cd /d "%~dp0"
-start http://localhost:3000
-node server.js
-pause
-```
-Puoi creare un collegamento a questo file `.bat` e posizionarlo sul Desktop o nella cartella Esecuzione automatica (`shell:startup`).
-
----
 
 ## 8. Risoluzione Problemi Comuni
 
